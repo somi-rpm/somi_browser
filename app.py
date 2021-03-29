@@ -16,19 +16,19 @@ class MainWindow(QMainWindow):
         navbar = QToolBar()
         self.addToolBar(navbar)
 
-        bk_btn = QAction("Back", self)
+        bk_btn = QAction("Back", self)                      # Back Button
         bk_btn.triggered.connect(self.browser.back)
         navbar.addAction(bk_btn)
 
-        fwd_btn = QAction("Forward", self)
+        fwd_btn = QAction("Forward", self)                  # Forward Button
         fwd_btn.triggered.connect(self.browser.forward)
         navbar.addAction(fwd_btn)
 
-        refresh_btn = QAction("Reload", self)
+        refresh_btn = QAction("Reload", self)               # Reload Button
         refresh_btn.triggered.connect(self.browser.reload)
         navbar.addAction(refresh_btn)
 
-        home_btn = QAction("Home", self)
+        home_btn = QAction("Home", self)                    # Home (Default)
         home_btn.triggered.connect(self.NavHome)
         navbar.addAction(home_btn)
 
@@ -39,7 +39,7 @@ class MainWindow(QMainWindow):
         self.browser.urlChanged.connect(self.UpdtUrl)
 
     def NavHome(self):
-        self.browser.setUrl(QUrl("https://www.google.com"))
+        self.browser.setUrl(QUrl("https://www.google.com"))     # Home can be change by changing url 
 
     def NavToUrl(self):
         url = self.UrlBar.text()
